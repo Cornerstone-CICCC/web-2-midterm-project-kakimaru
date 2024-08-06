@@ -1,0 +1,24 @@
+.header {
+  background-color: #252525;
+  padding: 16px;
+}
+
+.headerContents {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.title {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.active {
+  color: #FF7C7C;
+}
