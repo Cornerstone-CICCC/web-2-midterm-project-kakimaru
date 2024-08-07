@@ -11,8 +11,8 @@ function HomePage() {
       <Header />
       <section className={styles.section}>
         <SearchInput />
-        <h1>Today’s Trending Programs</h1>
-        <h2>Movies</h2>
+        <h1 className={styles.mainTitle}>Today’s Trending Programs</h1>
+        <h2 className={styles.title}>Movies</h2>
         <Movies />
         <h2>TV Shows</h2>
         <TVshows />

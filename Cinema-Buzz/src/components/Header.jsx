@@ -7,7 +7,7 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.headerContents}>
         <Logo />
-        <NavLink to="/about" className={styles.title}>
+        <NavLink to="/about" className={styles.link}>
           About
         </NavLink>
       </div>

@@ -1,8 +1,12 @@
+@use "../styles/variables" as v;
+@use "../styles/mixins" as m;
+
+
 .about {
-  max-width: 1200px;
+  max-width: v.$pcWidth;
   width: 100%;
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 40px 16px;
 }
 
 .image {
@@ -10,4 +14,17 @@
   height: 480px;
   object-fit: cover;
   object-position: top;
+  margin-top: 40px;
+}
+
+.title {
+  font-size: v.$TEXT_2XL;
+  margin-bottom: 16px;
+  @include m.md {
+    font-size: v.$TEXT_3XL;
+  }
+}
+
+.text {
+  font-size: v.$TEXT_BASE;
 }

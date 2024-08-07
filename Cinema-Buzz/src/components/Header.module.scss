@@ -1,10 +1,13 @@
+@use "../styles/variables" as v;
+@use "../styles/mixins" as m;
+
 .header {
   background-color: #252525;
   padding: 16px;
 }
 
 .headerContents {
-  max-width: 1200px;
+  max-width: v.$pcWidth;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -12,11 +15,14 @@
   margin: 0 auto;
 }
 
-.title {
+.link {
   color: #fff;
-  font-size: 24px;
+  font-size: v.$TEXT_XL;
   font-weight: bold;
   text-decoration: none;
+  @include m.md {
+    font-size: v.$TEXT_2XL;
+  }
 }
 
 .active {

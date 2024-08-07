@@ -1,3 +1,6 @@
+@use "../styles/variables" as v;
+@use "../styles/mixins" as m;
+
 .main {
   background-color: #070707;
 }
@@ -6,4 +9,19 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  padding: 40px 16px;
+}
+
+.mainTitle {
+  font-size: v.$TEXT_2XL;
+  @include m.md {
+    font-size: v.$TEXT_3XL;
+  }
+}
+
+.title {
+  font-size: v.$TEXT_XL;
+  @include m.md {
+    font-size: v.$TEXT_2XL;
+  }
 }
