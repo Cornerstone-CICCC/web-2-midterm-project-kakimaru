@@ -15,3 +15,18 @@ $WHITE: #fff;
 
 /* Container */
 $pcWidth: 1200px;
+
+/* themes.scss */
+$light-theme: (
+  background-color: #F7F0F0,
+  text-color: #410303,
+  second-bg: #fff,
+  input-bg: #fff,
+);
+
+$dark-theme: (
+  background-color: #070707,
+  text-color: #E8E8E8,
+  second-bg: #252525,
+  input-bg: #483434,
+);

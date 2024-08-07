@@ -1,10 +1,19 @@
+@use "../styles/variables" as v;
+@use "../styles/mixins" as m;
+
 .footer {
-  background-color: #252525;
   padding: 16px;
+  &.light {
+    background-color: map-get(v.$light-theme, second-bg);
+    color: map-get(v.$light-theme, text-color)
+  }
+  &.dark {
+    background-color: map-get(v.$dark-theme, second-bg);
+    color: map-get(v.$dark-theme, text-color)
+  }
 }
 
 .text {
-  color: #AAAAAA;
   font-size: 14px;
   text-align: center;
 }

@@ -1,11 +1,19 @@
 import Card from "./Card"
+import styles from './TVshows.module.scss'
+import PropTypes from 'prop-types';
 
-function TVshows() {
+
+
+function TVshows({theme}) {
   return (
-    <div>
-      <Card />
+    <div className={styles.container}>
+      <Card theme={theme} />
     </div>
   )
 }
+
+TVshows.propTypes = {
+  theme: PropTypes.string.isRequired
+};
 
 export default TVshows

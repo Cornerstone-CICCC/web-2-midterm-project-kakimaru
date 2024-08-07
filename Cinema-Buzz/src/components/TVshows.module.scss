@@ -1,0 +1,11 @@
+@use "../styles/variables" as v;
+@use "../styles/mixins" as m;
+
+.container {
+  display: grid;
+  gap: 16px;
+  @include m.md {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 24px;
+  }
+}
