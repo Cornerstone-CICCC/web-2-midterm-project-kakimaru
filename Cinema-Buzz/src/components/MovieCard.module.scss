@@ -17,10 +17,11 @@
   width: 150px;
   aspect-ratio: 2 /3;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 .title {
-  font-size: v.$TEXT_BASE;
+  font-size: v.$TEXT_LG;
   font-weight: bold;
   margin-bottom: 8px;
 }

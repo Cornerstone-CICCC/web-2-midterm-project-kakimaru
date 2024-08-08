@@ -6,8 +6,7 @@ import TVshows from "../components/TVshows"
 import styles from "./HomePage.module.scss"
 import PropTypes from 'prop-types';
 
-function HomePage({onToggleTheme, theme}) {
-
+function HomePage({onToggleTheme, theme, movies, tvshows}) {
   return (
     <main className={`${styles.main} ${styles[theme]}`}>
       <Header onToggleTheme={onToggleTheme} theme={theme} />
@@ -17,11 +16,11 @@ function HomePage({onToggleTheme, theme}) {
         <div className={styles.contents}>
           <div className={styles.wrap}>
             <h2 className={styles.title}>Movies</h2>
-            <Movies theme={theme} />
+            <Movies theme={theme} movies={movies} />
           </div>
           <div className={styles.wrap}>
             <h2 className={styles.title}>TV Shows</h2>
-            <TVshows theme={theme} />
+            <TVshows theme={theme} tvshows={tvshows} />
           </div>
         </div>
       </section>
@@ -31,8 +30,10 @@ function HomePage({onToggleTheme, theme}) {
 }
 
 HomePage.propTypes = {
-  onToggleTheme: PropTypes.func.isRequired,
-  theme: PropTypes.string.isRequired
+  onToggleTheme: PropTypes.func,
+  theme: PropTypes.string,
+  movies: PropTypes.array,
+  tvshows: PropTypes.array,
 };
 
 

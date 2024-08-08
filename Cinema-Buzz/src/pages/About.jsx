@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 function About({onToggleTheme, theme}) {
   return (
-    <main>
+    <main className={`${styles.main} ${styles[theme]}`}>
       <Header onToggleTheme={onToggleTheme} theme={theme} />
         <section className={`${styles.about} ${styles[theme]}` }>
           <h1 className={styles.title}>What’s is CinemaBuzz？</h1>
