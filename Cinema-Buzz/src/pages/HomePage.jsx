@@ -1,18 +1,24 @@
-import Footer from "../components/Footer"
-import Header from "../components/Header"
-import Movies from "../components/Movies"
-import SearchInput from "../components/SearchInput"
-import TVshows from "../components/TVshows"
-import styles from "./HomePage.module.scss"
-import PropTypes from 'prop-types';
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import Movies from "../components/Movies";
+import SearchInput from "../components/SearchInput";
+import TVshows from "../components/TVshows";
+import styles from "./HomePage.module.scss";
+import PropTypes from "prop-types";
 
-function HomePage({onToggleTheme, theme, movies, tvshows}) {
+function HomePage({ onToggleTheme, theme, movies, tvshows, query, setQuery }) {
   return (
     <main className={`${styles.main} ${styles[theme]}`}>
       <Header onToggleTheme={onToggleTheme} theme={theme} />
       <section className={styles.section}>
-        <SearchInput theme={theme} />
-        <h1 className={`${styles.mainTitle} ${styles[theme]}`}>Today’s Trending Programs</h1>
+        <SearchInput 
+          theme={theme} 
+          query={query} 
+          setQuery={setQuery}
+        />
+        <h1 className={`${styles.mainTitle} ${styles[theme]}`}>
+          Today’s Trending Programs
+        </h1>
         <div className={styles.contents}>
           <div className={styles.wrap}>
             <h2 className={styles.title}>Movies</h2>
@@ -26,7 +32,7 @@ function HomePage({onToggleTheme, theme, movies, tvshows}) {
       </section>
       <Footer theme={theme} />
     </main>
-  )
+  );
 }
 
 HomePage.propTypes = {
@@ -34,7 +40,8 @@ HomePage.propTypes = {
   theme: PropTypes.string,
   movies: PropTypes.array,
   tvshows: PropTypes.array,
+  query: PropTypes.string,
+  setQuery: PropTypes.func,
 };
 
-
-export default HomePage
+export default HomePage;

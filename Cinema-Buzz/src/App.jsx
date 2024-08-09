@@ -2,14 +2,21 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import About from "./pages/About";
 import PageNotFound from "./pages/PageNotFound";
-import PropTypes from "prop-types";
+import PropTypes, { func } from "prop-types";
 import { useEffect, useState } from "react";
+import { useSearch } from "./useSearch";
+
 
 function App() {
   const [theme, setTheme] = useState("dark");
   // const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [tvshows, setTVshows] = useState([]);
+  const [query, setQuery] = useState('')
+  
+  const {results} = useSearch(query)
+
+  console.log(results)
 
   const options = {
     method: "GET",
@@ -42,7 +49,6 @@ function App() {
     getData('tv', setTVshows);
   }, []);
 
-  // https://api.themoviedb.org/3/search/multi?query=apple&include_adult=false&language=en-US&page=1
 
   function handleToggleTheme() {
     setTheme(theme === "light" ? "dark" : "light");
@@ -59,6 +65,8 @@ function App() {
               theme={theme}
               movies={movies}
               tvshows={tvshows}
+              query={query}
+              setQuery={setQuery}
             />
           }
         />
