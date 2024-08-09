@@ -20,7 +20,7 @@ const options = {
 
 function App() {
   const [theme, setTheme] = useState("dark");
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [tvshows, setTVshows] = useState([]);
   const [query, setQuery] = useState('')
@@ -30,16 +30,14 @@ function App() {
   useEffect(function () {
     async function getData(type, setState) {
       try {
-        // setIsLoading(true);
+        setIsLoading(true);
         const res = await fetch(
           `https://api.themoviedb.org/3/trending/${type}/day?language=en-US`,
           options
         );
         const data = await res.json();
         setState(data.results)
-        // setMovies(data.results);
-        // console.log(moviesData.results);
-        // setIsLoading(false);
+        setIsLoading(false);
       } catch (err) {
         console.error(err);
       }
@@ -67,6 +65,7 @@ function App() {
               query={query}
               setQuery={setQuery}
               results={results}
+              isLoading={isLoading}
             />
           }
         />

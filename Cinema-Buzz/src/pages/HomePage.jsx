@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Movies from "../components/Movies";
 import SearchInput from "../components/SearchInput";
 import SearchResults from "../components/SearchResults";
+import Spinner from "../components/Spinner";
 import TVshows from "../components/TVshows";
 import styles from "./HomePage.module.scss";
 import PropTypes from "prop-types";
@@ -15,15 +16,17 @@ function HomePage({
   query,
   setQuery,
   results,
+  isLoading,
 }) {
   return (
     <main className={`${styles.main} ${styles[theme]}`}>
       <Header onToggleTheme={onToggleTheme} theme={theme} />
       <section className={styles.section}>
         <SearchInput theme={theme} query={query} setQuery={setQuery} />
-        {results.length > 0 ? 
-        (
+        {results.length > 0 ? (
           <SearchResults theme={theme} results={results} />
+        ) : isLoading ? (
+          <Spinner />
         ) : (
           <>
             <h1 className={`${styles.mainTitle} ${styles[theme]}`}>
