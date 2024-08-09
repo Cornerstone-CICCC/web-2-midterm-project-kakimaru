@@ -1,0 +1,22 @@
+@use "../styles/variables" as v;
+@use "../styles/mixins" as m;
+
+.search {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 24px;
+  background-color: #2C1414;
+  padding: 16px;
+  @include m.md {
+    max-width: 480px;
+    margin-bottom: 32px;
+  }
+  &.light {
+    background-color: map-get(v.$light-theme, input-bg);
+    color: map-get(v.$light-theme, text-color)
+  }
+  &.dark {
+    background-color: map-get(v.$dark-theme, input-bg);
+    color: map-get(v.$dark-theme, text-color)
+  }
+}

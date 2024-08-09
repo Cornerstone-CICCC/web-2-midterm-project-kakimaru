@@ -1,0 +1,50 @@
+@use "../styles/variables" as v;
+@use "../styles/mixins" as m;
+
+
+.main {
+  &.light {
+    background-color: map-get(v.$light-theme, background-color);
+    color: map-get(v.$light-theme, text-color)
+  }
+  &.dark {
+    background-color: map-get(v.$dark-theme, background-color);
+    color: map-get(v.$dark-theme, text-color)
+  }
+}
+
+
+.about {
+  max-width: v.$pcWidth;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 16px;
+  &.light {
+    background-color: map-get(v.$light-theme, background-color);
+    color: map-get(v.$light-theme, text-color)
+  }
+  &.dark {
+    background-color: map-get(v.$dark-theme, background-color);
+    color: map-get(v.$dark-theme, text-color)
+  }
+}
+
+.image {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: top;
+  margin-top: 40px;
+}
+
+.title {
+  font-size: v.$TEXT_2XL;
+  margin-bottom: 16px;
+  @include m.md {
+    font-size: v.$TEXT_3XL;
+  }
+}
+
+.text {
+  font-size: v.$TEXT_BASE;
+}

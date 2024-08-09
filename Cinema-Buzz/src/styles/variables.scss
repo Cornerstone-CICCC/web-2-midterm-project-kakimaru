@@ -1,0 +1,32 @@
+/* Fonts */
+$TEXT_2XS:  10px;
+$TEXT_XS:  12px;
+$TEXT_SM:   14px;
+$TEXT_BASE: 16px;
+$TEXT_LG:   18px;
+$TEXT_XL:   20px;
+$TEXT_2XL:  24px;
+$TEXT_3XL:  32px;
+$TEXT_4XL:  40px;
+$TEXT_5XL:  48px;
+
+/* Color */
+$WHITE: #fff;
+
+/* Container */
+$pcWidth: 1200px;
+
+/* themes.scss */
+$light-theme: (
+  background-color: #F7F0F0,
+  text-color: #410303,
+  second-bg: #fff,
+  input-bg: #fff,
+);
+
+$dark-theme: (
+  background-color: #070707,
+  text-color: #E8E8E8,
+  second-bg: #252525,
+  input-bg: #483434,
+);
