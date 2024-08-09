@@ -6,6 +6,17 @@ import PropTypes, { func } from "prop-types";
 import { useEffect, useState } from "react";
 import { useSearch } from "./useSearch";
 
+const API_AUTHORIZATION = import.meta.env.VITE_API_AUTHORIZATION
+
+const options = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization: `Bearer ${API_AUTHORIZATION}`,
+  },
+};
+
+
 
 function App() {
   const [theme, setTheme] = useState("dark");
@@ -15,18 +26,6 @@ function App() {
   const [query, setQuery] = useState('')
   
   const {results} = useSearch(query)
-
-  console.log(results)
-
-  const options = {
-    method: "GET",
-    headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkOWEwMDc2YTc4YmUyNDNjYzFhN2Q2N2MxOWUwNGM1OSIsIm5iZiI6MTcyMzA3MDkzOC4xNjg5NDYsInN1YiI6IjY2YjNmOGE5OTZjMWQ5MTI3MzQ1MmEyOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.UfsxAy-BMaHTZpkO5TQSEzdZ5TPGK6CLcBLfVNsveKc",
-    },
-  };
-
 
   useEffect(function () {
     async function getData(type, setState) {
@@ -67,6 +66,7 @@ function App() {
               tvshows={tvshows}
               query={query}
               setQuery={setQuery}
+              results={results}
             />
           }
         />

@@ -1,15 +1,19 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./SearchInput.module.scss";
-import PropTypes from "prop-types";
+import PropTypes, { func } from "prop-types";
 import { useSearch } from "../useSearch";
 
 function SearchInput({ theme, query, setQuery }) {
   const inputEl = useRef(null);
 
+  useEffect(function(){
+    inputEl.current.focus()
+  }, [])
+
   return (
       <input
         type="text"
-        placeholder="Try search programs..."
+        placeholder="Try search the title..."
         className={`${styles.search} ${styles[theme]}`}
         value={query}
         onChange={(e) => setQuery(e.target.value)}

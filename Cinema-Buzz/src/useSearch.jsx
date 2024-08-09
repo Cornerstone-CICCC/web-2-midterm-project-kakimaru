@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
   // https://api.themoviedb.org/3/search/multi?query=apple&include_adult=false&language=en-US&page=1
 
 
+
+const API_AUTHORIZATION = import.meta.env.VITE_API_AUTHORIZATION
+
 export function useSearch(query) {
   const [results, setResults] = useState([])
 
@@ -14,8 +17,7 @@ export function useSearch(query) {
         method: "GET",
         headers: {
           accept: "application/json",
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkOWEwMDc2YTc4YmUyNDNjYzFhN2Q2N2MxOWUwNGM1OSIsIm5iZiI6MTcyMzA3MDkzOC4xNjg5NDYsInN1YiI6IjY2YjNmOGE5OTZjMWQ5MTI3MzQ1MmEyOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.UfsxAy-BMaHTZpkO5TQSEzdZ5TPGK6CLcBLfVNsveKc",
+          Authorization: `Bearer ${API_AUTHORIZATION}`,
         },
         signal: controller.signal
       };
@@ -33,6 +35,7 @@ export function useSearch(query) {
     }
     
     if(query.length < 3) {
+      setResults([])
       return;
     }
     
